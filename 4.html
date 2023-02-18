@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<style>
+html{
+    position: relative;
+width: 375px;
+height: 812px;
+background: #ECF1E5;
+}
+
+</style>
+<body>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        button {
+          border: 0;
+          background: 0;
+          padding: 0;
+          margin: 0;
+          font-size: 30px;
+        }
+        .calendar {
+          padding: 20px;
+          border-radius: 63px;
+          background: #fefefe;
+          box-shadow: 0 2px 15px #aaa;
+          font-family: sans-serif;
+          top: 1175px;
+    position: absolute;
+    left: 90px;
+    width: 853px;
+    height: 824px;
+        }
+        
+        .calendar__header {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 16px;
+          font-size: 50px;
+        }
+        
+        .week, .days {
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          justify-items: center;
+          height: 132px;
+          width: 823px;
+        }
+        
+        .week {
+          margin-bottom: 10px;
+          position: relative;
+          font-size: 50px;
+box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+border-radius: 13px;
+        }
+        
+        .days {
+          grid-gap: 4px;
+          background: #F2EAFD;
+box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+border-radius: 13px;
+height: 647px;
+    top: 162px;
+    position: absolute;
+
+        }
+        
+        .day {
+          height:110px;
+          width: 30px;
+          border-radius: 50%;
+          outline: none;
+          height: 132px;
+    width: 112px;
+    font-size: 50px;
+    border-radius: 50%;
+    outline: none;
+    
+        }
+        
+        .day--today {
+          background: #8A6FAC;
+          color: white;
+        }
+        
+        .day:focus {
+          border: 1px solid #8A6FAC;
+        }
+        </style>
+        
+          <script>
+          window.console = window.console || function(t) {};
+        </script>
+        
+          
+          
+          <script>
+          if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+          }
+        </script>
+        
+        
+        </head>
+        <div>
+            <div>
+                <img src="3.png" onclick=window.location.href="3.html" style="top: 126px;
+                position: absolute;
+                width: 62px;
+                left: 59px;">
+                            <input type="text" class="type-1" />
+                            <style>.type-1 {
+                                border-radius: 60px;
+    border: 5px solid #eee;
+    transition: .3s border-color;
+    top: 636px;
+    position: absolute;
+    left: 54px;
+    font-size: 89px;
+    width: 897px;
+    height: 382px;
+                            }
+                            .type-1:hover {
+                              border: 1px solid #aaa;
+                            }
+                            </style>
+
+            </div>
+        
+            <img src="4.png" style="width: 991px;">
+            <style>
+                .button1 {
+                    border: 90px;
+    background-color: #8A6FAC;
+    color: #fff;
+    font-weight: 600;
+    border-radius: -238px;
+    width: 799px;
+    top: 2341px;
+    position: absolute;
+    left: 133px;
+    height: 102px;
+    font-size: 78px;
+    border-radius: 144px;}
+.button1:active {
+            transform: scale(1);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            /* Lowering the shadow */
+        }
+            </style>
+            <button class="button1" onclick=window.location.href="5.html">Отправить</button>
+            <img src="3_1_2.png" onclick=window.location.href="1.html" style="width: 170px;
+            left: 87px;
+            top: 2523px;
+            position: absolute;">
+    
+        </div>
+        <body translate="no" >
+          <!DOCTYPE html>
+            <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+        
+          
+              <script id="rendered-js" >
+        const months = [
+        'Январь',
+        'Февраль',
+        'Март',
+        'Апрель',
+        'Май',
+        'Июнь',
+        'Июль',
+        'Август',
+        'Сентябрь',
+        'Октябрь',
+        'Ноябрь',
+        'Декабрь'];
+        
+        
+        function drawCalendar(date) {
+          const calendar = document.createElement('div');
+          calendar.classList.add('calendar');
+          const daysNode = drawDayList(date);
+          calendar.appendChild(drawCalendarHeader(date, daysNode));
+          calendar.appendChild(drawWeek());
+          calendar.appendChild(daysNode);
+          return calendar;
+        }
+        
+        function drawCalendarHeader(date, daysNode) {
+          let oldDays = daysNode;
+          const currentMonth = months[date.getMonth()];
+        
+          const header = document.createElement('div');
+          header.classList.add('calendar__header');
+        
+          const month = document.createElement('div');
+          month.textContent = currentMonth;
+        
+          const prevBtn = document.createElement('button');
+          prevBtn.textContent = 'Предыдущий';
+        
+          prevBtn.onclick = function () {
+            date.setMonth(date.getMonth() - 1);
+            const newDays = drawDayList(date);
+            calendar.replaceChild(newDays, oldDays);
+            month.textContent = months[date.getMonth()];
+            oldDays = newDays;
+          };
+        
+          const nextBtn = document.createElement('button');
+          nextBtn.textContent = 'Следующий';
+          nextBtn.onclick = function () {
+            date.setMonth(date.getMonth() + 1);
+            const newDays = drawDayList(date);
+            calendar.replaceChild(newDays, oldDays);
+            month.textContent = months[date.getMonth()];
+            oldDays = newDays;
+          };
+          header.appendChild(prevBtn);
+          header.appendChild(month);
+          header.appendChild(nextBtn);
+          return header;
+        }
+        
+        function drawWeek() {
+          const weekDays = ['Пн', 'Вт', 'Cр', 'Чт', 'Пт', 'Cб', 'Вс'];
+          const week = document.createElement('div');
+          week.classList.add('week');
+          weekDays.forEach(function (day) {
+            const dayNode = document.createElement('div');
+            dayNode.classList.add('week__day');
+            dayNode.textContent = day;
+            week.appendChild(dayNode);
+          });
+          return week;
+        }
+        
+        function drawDayList(date) {
+          const dayListNode = document.createElement('div');
+          dayListNode.classList.add('days');
+          const tempDate = new Date(
+          date.getFullYear(),
+          date.getMonth() + 1,
+          0);
+        
+          const lastDayDate = tempDate.getDate();
+          tempDate.setDate(1);
+          const firstDay = tempDate.getDay();
+          const ourFirstDay = firstDay > 0 ? firstDay - 1 : 6;
+        
+          const days = [];
+          for (let i = 0; i < ourFirstDay; i++) {if (window.CP.shouldStopExecution(0)) break;
+            days.push({ value: '', disabled: true });
+          }window.CP.exitedLoop(0);
+          for (let i = 1; i <= lastDayDate; i++) {if (window.CP.shouldStopExecution(1)) break;
+            days.push({ value: i, disabled: false });
+          }window.CP.exitedLoop(1);
+          const todayDate = new Date().getDate();
+        
+          days.forEach(function (dayData) {
+            const dayNode = document.createElement('button');
+            dayNode.classList.add('day');
+            dayNode.textContent = dayData.value;
+            dayNode.disabled = dayData.disabled;
+            if (dayData.value === todayDate) {
+              dayNode.classList.add('day--today');
+            }
+        
+            dayListNode.appendChild(dayNode);
+          });
+          return dayListNode;
+        }
+        
+        
+        const targetDate = new Date();
+        const calendar = drawCalendar(targetDate);
+        document.body.appendChild(calendar);
+        //# sourceURL=pen.js
+            </script>
+        </body>
+</html>

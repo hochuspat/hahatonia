@@ -1,0 +1,113 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facial Detection App</title>
+  </head>
+  <body>
+    <h1>Facial Detection</h1>
+    <video id="video" autoplay style="display: none"></video>
+    <canvas id="canvas" width="500px" height="400px"></canvas>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+  <script >
+    let video = document.getElementById("video");
+let model;
+
+// Объявление переменной canvas и настройка контекста
+
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+
+const accessCamera = () => {
+  navigator.mediaDevices
+    .getUserMedia({
+      video: { width: 500, height: 400 },
+      audio: false,
+    })
+    .then((stream) => {
+      video.srcObject = stream;
+    });
+};
+
+const detectFaces = async () => {
+  const prediction = await model.estimateFaces(video, false);
+
+  // Использование canvas для рисования видео
+
+  ctx.drawImage(video, 0, 0, 500, 400);
+  counter = 0
+  prediction.forEach((predictions) => {
+    counter += 1
+    const labels = ['настя', 'влад', 'илья', 'катя', 'артем']
+    ctx.beginPath();
+    ctx.lineWidth = "4";
+    ctx.strokeStyle = "yellow";
+    console.log(counter)
+    if (counter===2){
+    ctx.font = "italic 25pt Arial";
+    ctx.fillStyle = "yellow";
+    ctx.fillText(labels[0], 300, 70);
+    ctx.fillText(labels[1], 100, 70);}
+    else if (counter===1){
+    ctx.font = "italic 25pt Arial";
+    ctx.fillStyle = "yellow";
+    ctx.fillText(labels[0], 300, 70);}
+    else if (counter===3){
+    ctx.font = "italic 25pt Arial";
+    ctx.fillStyle = "yellow";
+    ctx.fillText(labels[0], 300, 70);
+    ctx.fillText(labels[1], 100, 70);
+    ctx.fillText(labels[3], 200, 70);}
+    else if (counter===4){
+    ctx.font = "italic 25pt Arial";
+    ctx.fillStyle = "yellow";
+    ctx.fillText(labels[0], 300, 70);
+    ctx.fillText(labels[1], 100, 70);
+    ctx.fillText(labels[3], 200, 70);
+    ctx.fillText(labels[4], 250, 70);}
+    else if (counter===5){
+    ctx.font = "italic 25pt Arial";
+    ctx.fillStyle = "yellow";
+    ctx.fillText(labels[0], 300, 70);
+    ctx.fillText(labels[1], 100, 70);
+    ctx.fillText(labels[3], 200, 70);
+    ctx.fillText(labels[4], 250, 70);
+    ctx.fillText(labels[5], 310, 70);}
+
+      ctx.rect(
+    predictions.topLeft[0],
+    predictions.topLeft[1],
+    predictions.bottomRight[0] - predictions.topLeft[0],
+    predictions.bottomRight[1] - predictions.topLeft[1]
+    );
+      
+
+    // ctx.rect(
+    //   predictions.topLeft[0],
+    //   predictions.topLeft[1],
+    //   predictions.bottomRight[0] - predictions.topLeft[0],
+    //   predictions.bottomRight[1] - predictions.topLeft[1]
+    // );
+    
+    // Последние два аргумента обозначают ширину и высоту,
+    // но поскольку модели blazeface возвращают только координаты,  
+    // мы должны вычесть их, чтобы получить ширину и высоту
+    ctx.stroke();
+
+    // Рисование прямоугольника, который будет определять лицо
+    
+  });
+};
+
+accessCamera();
+video.addEventListener("loadeddata", async () => {
+  model = await blazeface.load();
+  // Вызов функции detectFaces каждые 40 миллисекунд
+  setInterval(detectFaces, 40);
+});
+  </script>
+</html>
