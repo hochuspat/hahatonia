@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_da7aa58c9c812617692f1d82abf00fd8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_da7aa58c9c812617692f1d82abf00fd8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_da7aa58c9c812617692f1d82abf00fd8 = L.map(
+                "map_da7aa58c9c812617692f1d82abf00fd8",
+                {
+                    center: [45.026368, 39.08762],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                    startZoom: 8,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_522d351bc3acc1683fe9948234f9236c = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_da7aa58c9c812617692f1d82abf00fd8);
+        
+    
+            var marker_b1127ab5cc3848b8c04b84438f980024 = L.marker(
+                [45.026368, 39.08762],
+                {}
+            ).addTo(map_da7aa58c9c812617692f1d82abf00fd8);
+        
+    
+        var popup_371e7917ebaf5aa72c9d6a37d64b10df = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d12ee3a0263d96741dc4bbd718f2b46 = $(`<div id="html_2d12ee3a0263d96741dc4bbd718f2b46" style="width: 100.0%; height: 100.0%;">Главный офис</div>`)[0];
+                popup_371e7917ebaf5aa72c9d6a37d64b10df.setContent(html_2d12ee3a0263d96741dc4bbd718f2b46);
+            
+        
+
+        marker_b1127ab5cc3848b8c04b84438f980024.bindPopup(popup_371e7917ebaf5aa72c9d6a37d64b10df)
+        ;
+
+        
+    
+    
+            marker_b1127ab5cc3848b8c04b84438f980024.bindTooltip(
+                `<div>
+                     Бородинская улица, 14
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dd620b127eec4c27a0c6ada444e300e6 = L.marker(
+                [45.032948184839086, 39.04587970041479],
+                {}
+            ).addTo(map_da7aa58c9c812617692f1d82abf00fd8);
+        
+    
+        var popup_7a76625abedd5380b43e1b6d32fed4b9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e493ba70897a6c4c82dfc31dc5d6d67 = $(`<div id="html_0e493ba70897a6c4c82dfc31dc5d6d67" style="width: 100.0%; height: 100.0%;">Аквамарин</div>`)[0];
+                popup_7a76625abedd5380b43e1b6d32fed4b9.setContent(html_0e493ba70897a6c4c82dfc31dc5d6d67);
+            
+        
+
+        marker_dd620b127eec4c27a0c6ada444e300e6.bindPopup(popup_7a76625abedd5380b43e1b6d32fed4b9)
+        ;
+
+        
+    
+    
+            marker_dd620b127eec4c27a0c6ada444e300e6.bindTooltip(
+                `<div>
+                     Уральская ул., 75/1к2, Краснодар
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92c650edad0da9d344309ccc5d1cf73d = L.marker(
+                [45.038868593006484, 38.9864721887298],
+                {}
+            ).addTo(map_da7aa58c9c812617692f1d82abf00fd8);
+        
+    
+        var popup_be371985b7ce2a618eac37b4f7f22709 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f7d91f36c62dfef9db24617f400fbca1 = $(`<div id="html_f7d91f36c62dfef9db24617f400fbca1" style="width: 100.0%; height: 100.0%;">Кристалл</div>`)[0];
+                popup_be371985b7ce2a618eac37b4f7f22709.setContent(html_f7d91f36c62dfef9db24617f400fbca1);
+            
+        
+
+        marker_92c650edad0da9d344309ccc5d1cf73d.bindPopup(popup_be371985b7ce2a618eac37b4f7f22709)
+        ;
+
+        
+    
+    
+            marker_92c650edad0da9d344309ccc5d1cf73d.bindTooltip(
+                `<div>
+                     Северная ул., 327, Краснодар
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_41be2399332f3311f73a383a0c17849b = L.marker(
+                [45.092971, 39.032167],
+                {}
+            ).addTo(map_da7aa58c9c812617692f1d82abf00fd8);
+        
+    
+        var popup_6cc87e6dc88f6c1796555797e469e3e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_41e7784016ef9e5e92f078d5cec5a2e2 = $(`<div id="html_41e7784016ef9e5e92f078d5cec5a2e2" style="width: 100.0%; height: 100.0%;">Командорская ул., 9/2</div>`)[0];
+                popup_6cc87e6dc88f6c1796555797e469e3e8.setContent(html_41e7784016ef9e5e92f078d5cec5a2e2);
+            
+        
+
+        marker_41be2399332f3311f73a383a0c17849b.bindPopup(popup_6cc87e6dc88f6c1796555797e469e3e8)
+        ;
+
+        
+    
+    
+            marker_41be2399332f3311f73a383a0c17849b.bindTooltip(
+                `<div>
+                     Командорская ул., 9/2, Краснодар
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d851d568e5e1557d3bc5498eb325264c = L.marker(
+                [43.577172, 39.748951],
+                {}
+            ).addTo(map_da7aa58c9c812617692f1d82abf00fd8);
+        
+    
+        var popup_020e5ec70000bb06dc0a36884221bc66 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eb1e997ade6de7d33b3fe25d05b688f4 = $(`<div id="html_eb1e997ade6de7d33b3fe25d05b688f4" style="width: 100.0%; height: 100.0%;">Фабрициуса ул., 16</div>`)[0];
+                popup_020e5ec70000bb06dc0a36884221bc66.setContent(html_eb1e997ade6de7d33b3fe25d05b688f4);
+            
+        
+
+        marker_d851d568e5e1557d3bc5498eb325264c.bindPopup(popup_020e5ec70000bb06dc0a36884221bc66)
+        ;
+
+        
+    
+    
+            marker_d851d568e5e1557d3bc5498eb325264c.bindTooltip(
+                `<div>
+                     Фабрициуса ул., 16, Сочи
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fa0c3e9908b9b86e10ee807225a65d09 = L.marker(
+                [44.874605, 37.329995],
+                {}
+            ).addTo(map_da7aa58c9c812617692f1d82abf00fd8);
+        
+    
+        var popup_1f80ee74390f50bbd8b098d266819ec7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_68a20cedbb261931f87c57204076db76 = $(`<div id="html_68a20cedbb261931f87c57204076db76" style="width: 100.0%; height: 100.0%;">Ленина ул., 173А</div>`)[0];
+                popup_1f80ee74390f50bbd8b098d266819ec7.setContent(html_68a20cedbb261931f87c57204076db76);
+            
+        
+
+        marker_fa0c3e9908b9b86e10ee807225a65d09.bindPopup(popup_1f80ee74390f50bbd8b098d266819ec7)
+        ;
+
+        
+    
+    
+            marker_fa0c3e9908b9b86e10ee807225a65d09.bindTooltip(
+                `<div>
+                     Ленина ул., 173А, Анапа
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
